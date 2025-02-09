@@ -91,7 +91,7 @@ app.delete("/cache/:key", (req, res) => {
     if (result.error) {
       return res.status(404).json(result.error);
     }
-    return res.status(200).json(result);
+    return res.status(200).json({ message: result.message });
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
