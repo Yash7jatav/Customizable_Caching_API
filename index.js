@@ -89,7 +89,7 @@ app.delete("/cache/:key", (req, res) => {
     const key = req.params.key;
     const result = deleteCache(key);
     if (result.error) {
-      return res.status(404).json(result.error);
+      return res.status(404).json({ error: result.error });
     }
     return res.status(200).json({ message: result.message });
   } catch (error) {
